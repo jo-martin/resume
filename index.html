@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jo Martin — Senior Network & Cloud Engineer specialising in enterprise infrastructure, networks, cloud, cyber resilience and service operations.">
+  <meta name="theme-color" content="#0a1020">
+  <title>Jo Martin | Senior Network & Cloud Engineer</title>
+
+  <style>
+    :root {
+      --bg: #080d19;
+      --panel: #10182a;
+      --panel-2: #151f35;
+      --text: #eef4fb;
+      --muted: #a9b5c7;
+      --soft: #7f8ca3;
+      --cyan: #77d7f5;
+      --mint: #9de7ca;
+      --amber: #f2ca78;
+      --line: rgba(255,255,255,.095);
+      --shadow: 0 20px 70px rgba(0,0,0,.28);
+      --radius: 20px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(119,215,245,.10), transparent 28rem),
+        radial-gradient(circle at 88% 13%, rgba(157,231,202,.075), transparent 25rem),
+        var(--bg);
+      font: 16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; }
+    .shell { width: min(var(--max), calc(100% - 34px)); margin: 0 auto; }
+
+    header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(8,13,25,.78);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      min-height: 68px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+
+    .brand {
+      font-weight: 800; letter-spacing: -.035em; text-decoration: none;
+    }
+
+    .navlinks { display: flex; gap: 19px; flex-wrap: wrap; }
+    .navlinks a { color: var(--muted); text-decoration: none; font-size: .91rem; }
+    .navlinks a:hover { color: var(--text); }
+
+    main { padding: 76px 0 54px; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.38fr) minmax(280px, .62fr);
+      gap: 38px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    .eyebrow {
+      color: var(--mint);
+      font-size: .76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+    }
+
+    h1 {
+      margin: 12px 0 19px;
+      font-size: clamp(3.2rem, 8.6vw, 6.7rem);
+      line-height: .9;
+      letter-spacing: -.068em;
+    }
+
+    .hero-copy {
+      max-width: 820px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+    }
+
+    .hero-card,
+    .section,
+    .impact-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.022));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card { padding: 25px; }
+    .hero-card .title { font-weight: 760; font-size: 1.08rem; }
+    .hero-card p { color: var(--muted); margin: 8px 0 0; }
+
+    .links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 19px; }
+    .button {
+      min-height: 42px; padding: 0 14px;
+      display: inline-flex; align-items: center; justify-content: center;
+      text-decoration: none; border: 1px solid var(--line);
+      border-radius: 999px; background: rgba(255,255,255,.035);
+      font-size: .92rem; font-weight: 700;
+    }
+    .button:hover { border-color: rgba(119,215,245,.62); }
+
+    .cred-bar {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; margin: 0 0 30px; overflow: hidden;
+      border: 1px solid var(--line); border-radius: var(--radius);
+      background: var(--line);
+    }
+
+    .cred {
+      background: var(--panel);
+      padding: 20px 22px;
+    }
+    .cred span { display: block; color: var(--soft); font-size: .78rem; text-transform: uppercase; letter-spacing: .09em; }
+    .cred strong { display: block; margin-top: 3px; font-size: 1rem; }
+
+    .section { padding: 30px; margin-bottom: 28px; }
+
+    h2 {
+      margin: 0 0 21px; font-size: 1.26rem; letter-spacing: -.025em;
+    }
+
+    h3 { margin: 0; font-size: 1.04rem; letter-spacing: -.012em; }
+
+    .summary { color: var(--muted); margin: 0; }
+
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .cap {
+      padding: 19px;
+      background: rgba(255,255,255,.026);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+    }
+
+    .cap b { display: block; margin-bottom: 6px; }
+    .cap p { margin: 0; color: var(--muted); font-size: .93rem; }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 17px;
+      margin-bottom: 28px;
+    }
+
+    .impact-card { padding: 25px; }
+    .impact-card .tag {
+      display: inline-block; margin-bottom: 12px;
+      color: var(--amber); font-size: .73rem; font-weight: 800;
+      letter-spacing: .11em; text-transform: uppercase;
+    }
+    .impact-card p { color: var(--muted); margin: 9px 0 0; }
+    .impact-card ul { color: var(--muted); padding-left: 1.1rem; margin: 12px 0 0; }
+    .impact-card li + li { margin-top: 6px; }
+
+    .columns { display: grid; grid-template-columns: 1.42fr .58fr; gap: 28px; }
+
+    .role {
+      padding-bottom: 27px; margin-bottom: 27px;
+      border-bottom: 1px solid var(--line);
+    }
+    .role:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: 0; }
+
+    .role-head {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 18px;
+    }
+    .role-meta { color: var(--soft); font-size: .9rem; white-space: nowrap; }
+    .company { margin-top: 4px; color: var(--cyan); font-weight: 700; }
+    .role p { color: var(--muted); margin: 10px 0 0; }
+
+    .compact-list {
+      padding-left: 1.1rem;
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
+    .compact-list li + li { margin-top: 6px; }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      padding: 7px 10px; border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.025);
+      color: var(--muted); font-size: .88rem;
+    }
+
+    .fact { padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .fact:last-child { border: 0; }
+    .fact span { display: block; color: var(--soft); font-size: .84rem; }
+    .fact strong { display: block; margin-top: 2px; }
+
+    .note {
+      color: var(--soft); font-size: .82rem; margin: 14px 0 0;
+    }
+
+    footer {
+      color: var(--soft);
+      border-top: 1px solid var(--line);
+      padding: 28px 0 46px;
+      font-size: .88rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero, .columns { grid-template-columns: 1fr; }
+      .hero-card { max-width: 560px; }
+      .cred-bar { grid-template-columns: repeat(2, 1fr); }
+      .cap-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .impact-grid { grid-template-columns: 1fr; }
+      .role-head { display: block; }
+      .role-meta { white-space: normal; margin-top: 3px; }
+      nav { padding: 14px 0; }
+      .navlinks { display: none; }
+      main { padding-top: 50px; }
+      h1 { font-size: 3.6rem; }
+      .section { padding: 23px; }
+    }
+
+    @media print {
+      :root {
+        --bg: #fff; --panel: #fff; --panel-2: #fff;
+        --text: #101827; --muted: #475569; --soft: #64748b;
+        --cyan: #075985; --mint: #065f46; --amber: #92400e; --line: #d6dbe2;
+      }
+      body { background: #fff; font-size: 10.2pt; }
+      header { display: none; }
+      main { padding: 0; }
+      .shell { width: 100%; }
+      .hero { grid-template-columns: 1.38fr .62fr; gap: 18px; margin-bottom: 14px; }
+      h1 { font-size: 40pt; }
+      .hero-card, .section, .impact-card { box-shadow: none; background: #fff; }
+      .cred { background: #fff; }
+      .cred-bar, .section, .impact-card { break-inside: avoid; }
+      .section { padding: 17px; margin-bottom: 13px; }
+      .impact-grid { gap: 12px; margin-bottom: 13px; }
+      .impact-card { padding: 17px; }
+      .button { border: 0; padding: 0; min-height: auto; background: none; }
+      footer { padding-bottom: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="shell" aria-label="Primary">
+      <a class="brand" href="#top">JO MARTIN</a>
+      <div class="navlinks">
+        <a href="#profile">Profile</a>
+        <a href="#impact">Impact</a>
+        <a href="#experience">Experience</a>
+        <a href="#technology">Technology</a>
+        <a href="#education">Credentials</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" class="shell">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Enterprise Networks · Cloud · Infrastructure · Cyber Resilience</div>
+        <h1>Jo Martin</h1>
+        <p class="hero-copy">
+          Senior Network &amp; Cloud Engineer with 20+ years across complex government and private-sector ICT.
+          Combines deep infrastructure and networking expertise with technical leadership, SaaS and cloud
+          migration, resilient network architecture, systems integration, cyber resilience and disciplined
+          service operations.
+        </p>
+      </div>
+
+      <aside class="hero-card">
+        <div class="title">Senior Network &amp; Cloud Engineer</div>
+        <p>Department of Justice (Tasmania)<br>Hobart, Tasmania, Australia</p>
+        <div class="links">
+          <a class="button" href="https://www.linkedin.com/in/jo-martin-86961560/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a class="button" href="https://github.com/jo-martin" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </aside>
+    </section>
+
+    <section class="cred-bar" aria-label="Career highlights">
+      <div class="cred"><span>Experience</span><strong>20+ years in ICT</strong></div>
+      <div class="cred"><span>Strength</span><strong>Enterprise infrastructure</strong></div>
+      <div class="cred"><span>Leadership</span><strong>Technical lead / 2IC</strong></div>
+      <div class="cred"><span>Environment</span><strong>Government + private sector</strong></div>
+    </section>
+
+    <section id="profile" class="section">
+      <h2>Professional profile</h2>
+      <p class="summary">
+        Infrastructure engineer and technical leader with a long record of designing, operating and improving
+        highly available ICT environments. Jo's background spans enterprise networking, cloud and SaaS migration,
+        systems integration, Microsoft platforms, virtualisation, storage, identity, service management and cyber
+        resilience. She is particularly effective where the work is messy: ageing infrastructure, complex
+        migrations, multi-vendor dependencies, high-impact incidents or systems that need to become more reliable,
+        secure and supportable.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Core capability</h2>
+      <div class="cap-grid">
+        <div class="cap">
+          <b>Networks &amp; infrastructure</b>
+          <p>Enterprise LAN/WAN, Layer 2/3 design, VLANs, BGP, data-centre connectivity, SAN, virtual and physical infrastructure.</p>
+        </div>
+        <div class="cap">
+          <b>Cloud &amp; Microsoft platforms</b>
+          <p>Azure, Microsoft 365, Azure AD / identity, ADFS, Windows Server, SQL Server, IIS, Exchange Hybrid and hosted IaaS.</p>
+        </div>
+        <div class="cap">
+          <b>Operational leadership</b>
+          <p>Technical leadership, third-level support, major incident control, change governance, vendor coordination and documentation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact">
+      <h2>Selected technical impact</h2>
+
+      <div class="impact-grid">
+        <article class="impact-card">
+          <div class="tag">Enterprise SaaS migration</div>
+          <h3>Technical lead — Finance One to TechnologyOne Cloud</h3>
+          <p>
+            Technical lead for the complex migration of the agency's on-premises TechnologyOne Finance One
+            platform to TechnologyOne Cloud SaaS, including redesign of the integration architecture.
+          </p>
+          <ul>
+            <li>Designed replacement integrations using GoAnywhere MFT and secure SFTP endpoints.</li>
+            <li>Integrated Microsoft 365 mailboxes using OAuth 2.0 authentication.</li>
+            <li>Designed file-share transfers to and from TechnologyOne Cloud, plus logging, backup and audit-log workflows.</li>
+            <li>Integrated authentication with Microsoft Entra ID using OAuth 2.0 and produced supporting technical documentation.</li>
+          </ul>
+        </article>
+
+        <article class="impact-card">
+          <div class="tag">Network architecture</div>
+          <h3>Designed resilient multi-provider networking and a new DCaaS core</h3>
+          <p>
+            Strengthened agency network resilience through eBGP, new network design principles and modernised
+            HPE Aruba switching architecture.
+          </p>
+          <ul>
+            <li>Introduced eBGP at multiple Justice sites to provide multi-provider resilience.</li>
+            <li>Developed agency Network Design Principles and baseline configuration guidance.</li>
+            <li>Led migration from HPE Aruba AOS-Switch to AOS-CX.</li>
+            <li>Designed a new DCaaS core using a VSX pair of CX 8100 switches, 100 Gbit/s inter-switch link and separate 10 Gbit/s links to diverse telco eBGP peers.</li>
+          </ul>
+        </article>
+
+        <article class="impact-card">
+          <div class="tag">Source of truth</div>
+          <h3>Introduced NetBox for enterprise IPAM and DCIM</h3>
+          <p>
+            Introduced NetBox as the agency's enterprise source of truth for IP address management and
+            data-centre infrastructure management, improving the foundation for consistent network records,
+            planning and operational knowledge.
+          </p>
+        </article>
+
+        <article class="impact-card">
+          <div class="tag">Video collaboration</div>
+          <h3>Redesigned the Poly video-conferencing network</h3>
+          <p>
+            Redesigned the network architecture for Poly video-conferencing endpoints by separating them from
+            the corporate VRF, preventing SIP inspection from interfering with video-conferencing traffic.
+          </p>
+          <ul>
+            <li>Applied network segmentation to remove a persistent technical constraint.</li>
+            <li>Coordinated contractors and endpoint migrations through the replacement project.</li>
+            <li>Problem-solving and migration coordination helped the project finish ahead of schedule and under budget.</li>
+          </ul>
+        </article>
+
+        <article class="impact-card">
+          <div class="tag">Network transformation</div>
+          <h3>Refactored an ageing departmental network</h3>
+          <p>
+            Developed and executed a redesign and migration approach to improve performance, availability,
+            recoverability and security across an organically grown network.
+          </p>
+          <ul>
+            <li>Introduced network monitoring, hardware/software auditing and Active Directory auditing.</li>
+            <li>Established configuration baselines, hardening and repeatable design standards.</li>
+            <li>Progressed Layer 3 routing, VLAN architecture and BGP integration with upstream providers.</li>
+            <li>Removed bottlenecks and improved incident visibility for on-call support.</li>
+          </ul>
+        </article>
+
+        <article class="impact-card">
+          <div class="tag">Cloud &amp; identity</div>
+          <h3>Enabled secure cross-agency access during organisational transition</h3>
+          <p>
+            Designed a pragmatic identity and access solution that allowed staff transitioning between agencies
+            to securely access critical information systems while longer-term migration work continued.
+          </p>
+          <ul>
+            <li>Used ADFS OAuth 2.0 trusts, restricted firewall rules and Azure Application Registrations.</li>
+            <li>Applied Azure AD conditional access and MFA to web access.</li>
+            <li>Delivered quickly and at low cost without compromising the broader transition program.</li>
+          </ul>
+        </article>
+
+        <article class="impact-card">
+          <div class="tag">Hosted infrastructure</div>
+          <h3>Combined application upgrade with infrastructure migration</h3>
+          <p>
+            Planned the network interconnect into TasmaNet's data centre and used the move to upgrade a
+            business-critical records platform onto new hosted infrastructure.
+          </p>
+          <ul>
+            <li>Built SQL Server 2016, Windows Server and new application/database infrastructure.</li>
+            <li>Introduced new routed Layer 3 networks and Azure AD-backed identity controls.</li>
+            <li>Reduced migration risk through pre-production testing and staged transition.</li>
+          </ul>
+        </article>
+
+        <article class="impact-card">
+          <div class="tag">Cyber resilience</div>
+          <h3>Hands-on security review and incident response</h3>
+          <p>
+            Supported agency cyber posture through risk review, technical hardening, incident investigation
+            and security product evaluation.
+          </p>
+          <ul>
+            <li>Participated in Microsoft security assessments across AD, backup and SQL environments.</li>
+            <li>Investigated suspicious web activity using established incident-response practices and FlareVM.</li>
+            <li>Contributed to ELK/Sentinel evaluation and Microsoft Defender ATP proof-of-concept work.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <div class="columns">
+      <div>
+        <section id="experience" class="section">
+          <h2>Experience</h2>
+
+          <article class="role">
+            <div class="role-head">
+              <h3>Senior Network &amp; Cloud Engineer</h3>
+              <div class="role-meta">2021 — Present</div>
+            </div>
+            <div class="company">Department of Justice (Tasmania)</div>
+            <p>
+              Senior engineering and technical-lead role spanning enterprise networks, cloud/SaaS migration,
+              systems integration and infrastructure architecture in a service-critical government environment.
+            </p>
+            <ul class="compact-list">
+              <li>Technical lead for the Finance One migration from on-premises infrastructure to TechnologyOne Cloud SaaS, redesigning integrations through GoAnywhere MFT, SFTP, Microsoft 365 OAuth 2.0 and Entra ID.</li>
+              <li>Introduced NetBox as the enterprise IPAM/DCIM source of truth.</li>
+              <li>Introduced eBGP at multiple sites for multi-provider resilience and authored agency Network Design Principles.</li>
+              <li>Led HPE Aruba AOS-Switch to AOS-CX migration and developed baseline configuration guidance.</li>
+              <li>Designed the agency's new DCaaS network core using resilient VSX and diverse eBGP connectivity.</li>
+              <li>Redesigned the Poly video-conferencing network; coordinated technical remediation, contractors and migrations that contributed to delivery ahead of schedule and under budget.</li>
+            </ul>
+          </article>
+
+          <article class="role">
+            <div class="role-head">
+              <h3>Tech Lead · Senior Systems Administrator, Infrastructure &amp; Networks</h3>
+              <div class="role-meta">2016 — 2021</div>
+            </div>
+            <div class="company">Department of Premier and Cabinet (Tasmania)</div>
+            <p>
+              Technical Lead and 2IC to the ICT Manager, responsible for physical, virtual and cloud
+              infrastructure and for leading staff responsible for systems delivery and service expectations.
+            </p>
+            <ul class="compact-list">
+              <li>Led network redesign, cloud/hosted-service transition and adoption of Azure and Microsoft 365.</li>
+              <li>Acted as senior technical lead on Office 365 email/voice migration and other high-risk changes.</li>
+              <li>Embedded stronger ITIL-based change, incident and knowledge-management practices.</li>
+              <li>Frequently acted as Incident Controller for major outages, coordinating teams, vendors and stakeholder communications.</li>
+            </ul>
+          </article>
+
+          <article class="role">
+            <div class="role-head">
+              <h3>ICT Consultant</h3>
+              <div class="role-meta">2016</div>
+            </div>
+            <div class="company">Independent / Sole Trader</div>
+            <p>
+              Delivered professional services to government, including cross-data-centre migration of Fibre
+              Channel SAN fabrics and network infrastructure, alongside senior systems/network administration.
+            </p>
+          </article>
+
+          <article class="role">
+            <div class="role-head">
+              <h3>Engineer · Engineering Southern</h3>
+              <div class="role-meta">2015</div>
+            </div>
+            <div class="company">Alphawest Services / Optus Business</div>
+            <p>
+              Consulted to public and private-sector clients, delivering technical solutions across Microsoft
+              systems, storage and networks. Contributed to tenders, proposals, detailed design, estimating,
+              scoping, project planning and pre-sales advice.
+            </p>
+            <ul class="compact-list">
+              <li>Independently delivered a cross-forest Microsoft Exchange migration from Exchange 2003 to Exchange 2013.</li>
+            </ul>
+          </article>
+
+          <article class="role">
+            <div class="role-head">
+              <h3>Technical Specialist · Infrastructure Services</h3>
+              <div class="role-meta">2009 — 2015</div>
+            </div>
+            <div class="company">Department of Premier and Cabinet (Tasmania)</div>
+            <p>
+              Supported whole-of-government infrastructure and services across networks, SAN, data centre,
+              blades, server fleets, F5 load balancing, Exchange, unified communications and virtualisation.
+            </p>
+          </article>
+
+          <article class="role">
+            <div class="role-head">
+              <h3>Computer Systems Officer</h3>
+              <div class="role-meta">2007 — 2009</div>
+            </div>
+            <div class="company">Department of Premier and Cabinet (Tasmania)</div>
+            <p>
+              Service desk and data-centre operations, CMDB management, voice gateway support and systems
+              administration across Windows, Linux and Solaris environments.
+            </p>
+          </article>
+
+          <article class="role">
+            <div class="role-head">
+              <h3>Desktop Support Officer</h3>
+              <div class="role-meta">Early career</div>
+            </div>
+            <div class="company">Tasmanian Government</div>
+            <p>
+              First-level incident/request support, backup administration, SOE maintenance and desktop fleet deployment.
+            </p>
+          </article>
+
+          <article class="role">
+            <div class="role-head">
+              <h3>Co-Founder / Owner</h3>
+              <div class="role-meta">2015 — 2023</div>
+            </div>
+            <div class="company">Honey Badger Dessert Café</div>
+            <p>
+              Concurrent small-business experience spanning operating procedures, suppliers, contracts,
+              point-of-sale/merchant systems, promotion and business administration.
+            </p>
+          </article>
+        </section>
+      </div>
+
+      <aside>
+        <section id="technology" class="section">
+          <h2>Technology background</h2>
+          <div class="chips">
+            <span class="chip">NetBox</span>
+            <span class="chip">GoAnywhere MFT</span>
+            <span class="chip">TechnologyOne Cloud</span>
+            <span class="chip">Microsoft Entra ID</span>
+            <span class="chip">OAuth 2.0</span>
+            <span class="chip">SFTP</span>
+            <span class="chip">HPE Aruba AOS-CX</span>
+            <span class="chip">VSX</span>
+            <span class="chip">eBGP</span>
+            <span class="chip">Cisco</span>
+            <span class="chip">HPE / Aruba</span>
+            <span class="chip">BGP</span>
+            <span class="chip">VLAN / Layer 2-3</span>
+            <span class="chip">DNS</span>
+            <span class="chip">F5 Big-IP LTM</span>
+            <span class="chip">Fibre Channel SAN</span>
+            <span class="chip">iSCSI SAN</span>
+            <span class="chip">VMware vSphere</span>
+            <span class="chip">Azure</span>
+            <span class="chip">Microsoft 365</span>
+            <span class="chip">Azure AD</span>
+            <span class="chip">ADFS</span>
+            <span class="chip">Active Directory</span>
+            <span class="chip">Exchange Hybrid</span>
+            <span class="chip">Windows Server</span>
+            <span class="chip">SQL Server</span>
+            <span class="chip">IIS</span>
+            <span class="chip">PowerShell</span>
+            <span class="chip">Microsoft Sentinel</span>
+            <span class="chip">Defender ATP</span>
+            <span class="chip">ELK</span>
+            <span class="chip">LibreNMS</span>
+            <span class="chip">Lansweeper</span>
+            <span class="chip">Jira Service Desk</span>
+            <span class="chip">Confluence</span>
+            <span class="chip">ITIL</span>
+          </div>
+          <p class="note">Technology list reflects demonstrated career experience, not necessarily current day-to-day use of every platform.</p>
+        </section>
+
+        <section class="section">
+          <h2>Operating strengths</h2>
+          <div class="fact"><span>Design</span><strong>Reliable, supportable infrastructure</strong></div>
+          <div class="fact"><span>Delivery</span><strong>Complex migrations &amp; change</strong></div>
+          <div class="fact"><span>Operations</span><strong>Major incidents &amp; third-level support</strong></div>
+          <div class="fact"><span>Security</span><strong>Risk-based hardening &amp; response</strong></div>
+          <div class="fact"><span>Leadership</span><strong>Teams, vendors &amp; stakeholders</strong></div>
+        </section>
+
+        <section id="education" class="section">
+          <h2>Education &amp; credentials</h2>
+
+          <div class="fact">
+            <span>University of Tasmania</span>
+            <strong>Bachelor of Computing</strong>
+            <span>Golden Key International Honour Society</span>
+          </div>
+
+          <div class="fact">
+            <span>TAFE Tasmania</span>
+            <strong>Diploma of Information Technology</strong>
+            <span>Network Engineering</span>
+          </div>
+
+          <div class="fact">
+            <span>TAFE Tasmania</span>
+            <strong>Certificate IV in Information Technology</strong>
+            <span>Network Administration</span>
+          </div>
+
+          <div class="fact">
+            <span>Industry credentials / training</span>
+            <strong>CCNA · ITIL · Panduit</strong>
+            <span>Plus Microsoft cloud, security and governance training</span>
+          </div>
+
+          <div class="fact">
+            <span>Current public credential</span>
+            <strong>Intro to Service Management with ITIL® 4</strong>
+            <span>Issued 2023</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Professional links</h2>
+          <p class="summary">
+            <a href="https://www.linkedin.com/in/jo-martin-86961560/" target="_blank" rel="noreferrer">LinkedIn profile ↗</a><br>
+            <a href="https://github.com/jo-martin" target="_blank" rel="noreferrer">GitHub profile ↗</a>
+          </p>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="shell">
+      Jo Martin · Senior Network &amp; Cloud Engineer · Hobart, Tasmania
+    </div>
+  </footer>
+</body>
+</html>
